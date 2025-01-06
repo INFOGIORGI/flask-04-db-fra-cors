@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{titolo}}</title>
+    <link rel="stylesheet">
+
 </head>
 <body>
-   {%block content%}{%endblock%}
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Homepage</a></li>
+            <li><a href="{{url_for('products')}}">Products</a></li>
+        </ul>
+    </nav>
+
+    {%block content%}{%endblock%}
 </body>
 </html>
