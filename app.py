@@ -4,9 +4,9 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 
-#Connessione al Database
+
 app.config['MYSQL_HOST'] = "138.41.20.102"
-app.config['MYSQL_PORT'] = 53306  #Deve essere intero
+app.config['MYSQL_PORT'] = 53306  
 app.config['MYSQL_USER'] = "ospite"
 app.config['MYSQL_PASSWORD'] = "ospite"
 app.config['MYSQL_DB'] = "w3schools"
