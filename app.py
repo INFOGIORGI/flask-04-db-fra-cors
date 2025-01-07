@@ -29,21 +29,17 @@ def products():
 
     return render_template("products.html", titolo="Products", dati=dati)
 
-@app.route("/products_c/<int:categoryID>")  
+@app.route("/products_c/<categoryID>")  
 def products_c(categoryID):
 
     cursor = mysql.connection.cursor()
-    query = "SELECT * FROM categories"
+    query = "SELECT * FROM categories WHERE CategoryID="+categoryID
     cursor.execute(query)
     dati = cursor.fetchall()
     
-    lista=[]
-    for i in dati:
-        if int(i[0]) == categoryID:
-            lista.append(i)
 
     cursor.close()
-    return render_template("products_c.html", titolo="Categories", categoryID=categoryID, lista=lista)
+    return render_template("products_c.html", titolo="Categories", categoryID=categoryID, dati=dati)
 
  
 app.run(debug=True)
